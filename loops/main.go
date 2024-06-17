@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"slices"
 )
 
 func main() {
@@ -13,7 +12,18 @@ func main() {
 
 	animals = append(animals, "bird")
 
-	animals = slices.Delete(animals, 0, 1)
+	for index, value := range animals {
+		fmt.Printf("index: %d, value: %s\n", index, value)
+	}
 
-	fmt.Println(animals)
+	for value := range 10 {
+		fmt.Println(value)
+	}
+
+	// this is how you do while loops in go
+	i := 0
+	for i < 10 {
+		fmt.Println(i)
+		i++
+	}
 }
