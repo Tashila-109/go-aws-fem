@@ -23,5 +23,20 @@ func main() {
 	myPerson := NewPerson("Tashila", 10)
 	myPerson.changeName("Tashi")
 
+	// Pointers are used to pass a reference to a value
+	a := 7
+	b := &a
+	*b = 10
+	fmt.Println(b)
+	fmt.Println(a)
+
 	fmt.Println(myPerson)
+
+	mySlice := []int{1, 2, 3, 4, 5}
+
+	for index := range mySlice {
+		mySlice[index]++
+	}
+
+	fmt.Println(mySlice)
 }
