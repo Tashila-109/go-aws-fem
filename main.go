@@ -1,17 +1,28 @@
 package main
 
-import (
-	"fmt"
-	"go-aws-fem/imports"
+import "fmt"
+
+const (
+	PI = 3.14
 )
 
-func main() {
-	newTicket := imports.Ticket{
-		ID:    123,
-		Event: "FEM",
+type Circle struct {
+	radius float64
+}
+
+func NewCircle(radius float64) Circle {
+	return Circle{
+		radius: radius,
 	}
+}
 
-	newTicket.PrintEvent()
+func (c Circle) calculateCircumference() {
+	circumference := 2 * PI * c.radius
+	fmt.Println(circumference)
+}
 
-	fmt.Println(newTicket)
+func main() {
+	myCircle := NewCircle(5)
+
+	myCircle.calculateCircumference()
 }
