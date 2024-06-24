@@ -2,8 +2,16 @@ package main
 
 import (
 	"fmt"
+	"go-aws-fem/imports"
 )
 
 func main() {
-	fmt.Println("Hello world")
+	newTicket := imports.Ticket{
+		ID:    123,
+		Event: "FEM",
+	}
+
+	newTicket.PrintEvent()
+
+	fmt.Println(newTicket)
 }
